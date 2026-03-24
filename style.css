@@ -610,39 +610,102 @@ img {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero-main {
+    min-height: auto;
+  }
+
+  .hero-side {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
+  :root {
+    --sidebar-width: 100%;
+  }
+
+  .app-shell {
+    display: block;
+  }
+
   .sidebar {
     width: 100%;
     min-height: auto;
     position: sticky;
-    padding: 18px;
+    top: 0;
+    left: 0;
+    padding: 14px;
     border-right: none;
     border-bottom: 1px solid var(--line);
+    background: rgba(10, 10, 10, 0.96);
+  }
+
+  .sidebar-top {
+    margin-bottom: 0;
+  }
+
+  .brand {
+    max-width: calc(100% - 60px);
+  }
+
+  .brand strong {
+    font-size: 0.92rem;
+  }
+
+  .brand span:last-child {
+    font-size: 0.72rem;
   }
 
   .sidebar-toggle {
     display: block;
+    flex-shrink: 0;
   }
 
   .sidebar-profile {
-    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0 0;
   }
 
   .profile-image {
-    width: 82px;
-    height: 82px;
-    border-radius: 18px;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar-profile h1 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .role {
+    font-size: 0.92rem;
+    margin-bottom: 2px;
+  }
+
+  .role-highlight {
+    font-size: 0.82rem;
   }
 
   .sidebar-nav {
     display: none;
-    margin-top: 18px;
+    margin: 16px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
   }
 
   .sidebar.open .sidebar-nav {
     display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 10px;
+    font-size: 0.95rem;
   }
 
   .sidebar-footer {
@@ -652,30 +715,31 @@ img {
   .content {
     margin-left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 18px;
+  }
+
+  .section {
+    padding: 18px 0 26px;
   }
 
   .hero-grid {
     min-height: auto;
+    grid-template-columns: 1fr;
   }
 
   .hero-main {
     min-height: auto;
-  }
-}
-
-@media (max-width: 640px) {
-  .content {
-    padding: 16px;
+    padding: 22px;
   }
 
-  .panel {
-    padding: 18px;
+  .hero-main h2 {
+    font-size: clamp(1.9rem, 7vw, 3rem);
+    line-height: 1.08;
   }
 
-  .stack-grid,
-  .formation-grid {
-    grid-template-columns: 1fr;
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.7;
   }
 
   .hero-actions {
@@ -686,11 +750,141 @@ img {
     width: 100%;
   }
 
-  .hero-main h2 {
-    font-size: 2rem;
+  .about-grid,
+  .contact-grid,
+  .stack-grid,
+  .formation-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image-wrap {
+    height: 200px;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 14px;
+  }
+
+  .sidebar {
+    padding: 12px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+
+  .sidebar-profile {
+    align-items: flex-start;
+  }
+
+  .profile-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .sidebar-profile h1 {
+    font-size: 1rem;
+  }
+
+  .role {
+    font-size: 0.85rem;
+  }
+
+  .role-highlight {
+    font-size: 0.76rem;
+  }
+
+  .panel {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .section-header {
+    margin-bottom: 16px;
   }
 
   .section-header h3 {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
+  }
+
+  .hero-main h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero-description,
+  .panel p,
+  .project-content p,
+  .timeline-item p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .tech-tags span {
+    font-size: 0.82rem;
+    padding: 8px 12px;
+  }
+
+  .project-image-wrap {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: 16px;
+  }
+
+  .contact-form {
+    gap: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .content {
+    padding: 12px;
+  }
+
+  .hero-main h2 {
+    font-size: 1.55rem;
+  }
+
+  .section-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-image-wrap {
+    height: 160px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .tech-tags {
+    gap: 8px;
+  }
+
+  .tech-tags span {
+    width: 100%;
+    text-align: center;
   }
 }

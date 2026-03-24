@@ -5,28 +5,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section[id]");
   const formulario = document.getElementById("formulario");
 
+  // Abre/fecha sidebar no mobile
   if (sidebarToggle && sidebar) {
     sidebarToggle.addEventListener("click", () => {
       sidebar.classList.toggle("open");
     });
   }
 
+  // Fecha o menu ao clicar em um link no mobile
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      if (window.innerWidth <= 900) {
+      if (window.innerWidth <= 900 && sidebar) {
         sidebar.classList.remove("open");
       }
     });
   });
 
+  // Destaca o link da seção atual conforme o scroll
   const activateCurrentSection = () => {
     let currentSectionId = "";
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 140;
       const sectionHeight = section.offsetHeight;
 
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
         currentSectionId = section.getAttribute("id");
       }
     });
@@ -44,6 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", activateCurrentSection);
   activateCurrentSection();
 
+  // Se sair do mobile, garante que a sidebar volte ao estado normal
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900 && sidebar) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  // Formulário de contato
   if (formulario) {
     formulario.addEventListener("submit", enviarMensagem);
   }
@@ -52,8 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function enviarMensagem(event) {
   event.preventDefault();
 
-  const nome = document.getElementById("nome").value.trim();
-  const mensagem = document.getElementById("mensagem").value.trim();
+  const nomeInput = document.getElementById("nome");
+  const mensagemInput = document.getElementById("mensagem");
+
+  const nome = nomeInput ? nomeInput.value.trim() : "";
+  const mensagem = mensagemInput ? mensagemInput.value.trim() : "";
   const telefone = "5568999365536";
 
   if (!nome || !mensagem) {
@@ -65,5 +82,7 @@ function enviarMensagem(event) {
   const msgFormatada = encodeURIComponent(texto);
 
   window.open(`https://wa.me/${telefone}?text=${msgFormatada}`, "_blank");
-  document.getElementById("formulario").reset();
+
+  if (nomeInput) nomeInput.value = "";
+  if (mensagemInput) mensagemInput.value = "";
 }
