@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet"
   />
   <link
@@ -18,450 +18,135 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-top">
-        <div class="brand">
-          <span class="brand-mark">&lt;/&gt;</span>
-          <div>
-            <strong>Elton Barbosa</strong>
-            <span>Software Engineer in progress</span>
-          </div>
-        </div>
+  <header class="topbar">
+    <a href="#inicio" class="logo">eb<span>_</span></a>
+    <nav>
+      <a href="#stack">Stack</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Abrir menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
-      <div class="sidebar-profile">
-        <img src="img/fotoElton.jpg" alt="Foto de Elton Barbosa" class="profile-image" />
+  <main>
+    <section id="inicio" class="hero">
+      <div>
+        <p class="kicker">Desenvolvedor Full Stack · Rio Branco, AC</p>
         <h1>Elton Barbosa</h1>
-        <p class="role">Desenvolvedor Full Stack</p>
-        <p class="role-highlight">Java • React • TypeScript</p>
+        <p class="lead">
+          Construo aplicações web com <strong>React, Angular e TypeScript</strong> no
+          front-end e <strong>C# e Node</strong> no back-end. Estudante de Engenharia
+          de Software, focado em código limpo e evolução constante.
+        </p>
+        <div class="actions">
+          <a href="#contato" class="btn btn-solid">Falar comigo</a>
+          <a href="https://github.com/eltonmobarbosa" target="_blank" rel="noopener noreferrer" class="btn" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/elton-barbosa-b39b62388/" target="_blank" rel="noopener noreferrer" class="btn" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
+    </section>
 
-      <nav class="sidebar-nav" id="sidebar-nav">
-        <a href="#inicio" class="nav-link active">
-          <i class="fa-solid fa-house"></i>
-          <span>Início</span>
-        </a>
-        <a href="#sobre" class="nav-link">
-          <i class="fa-solid fa-user"></i>
-          <span>Sobre</span>
-        </a>
-        <a href="#stack" class="nav-link">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>Stack</span>
-        </a>
-        <a href="#projetos" class="nav-link">
-          <i class="fa-solid fa-code"></i>
-          <span>Projetos</span>
-        </a>
-        <a href="#experiencia" class="nav-link">
-          <i class="fa-solid fa-briefcase"></i>
-          <span>Experiência</span>
-        </a>
-        <a href="#formacao" class="nav-link">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <span>Formação</span>
-        </a>
-        <a href="#contato" class="nav-link">
-          <i class="fa-solid fa-paper-plane"></i>
-          <span>Contato</span>
-        </a>
-      </nav>
+    <section id="stack">
+      <h2>Stack</h2>
+      <dl class="stack">
+        <dt>Front-end</dt>
+        <dd>React · Angular · TypeScript</dd>
+        <dt>Back-end</dt>
+        <dd>C# · Node</dd>
+        <dt>Banco de dados</dt>
+        <dd>SQL Server</dd>
+        <dt>Ferramentas</dt>
+        <dd>Docker · Git · GitHub · Postman</dd>
+      </dl>
+    </section>
 
-      <div class="sidebar-footer">
-        <a href="https://github.com/eltonmobarbosa" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/elton-barbosa-b39b62388/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="mailto:elton.desenvolvimento@gmail.com" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <ul class="list">
+        <li>
+          <div class="row">
+            <h3>Sistema de Controle de Projetos (PROPEG)</h3>
+            <span class="tag">Full Stack</span>
+          </div>
+          <p>Plataforma para submissão, avaliação e gestão de projetos institucionais, com permissões e notificações em tempo real.</p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>Tracker IT</h3>
+            <span class="tag">Em desenvolvimento</span>
+          </div>
+          <p>Gestão e rastreamento de patrimônio de TI: controle de ativos, inventário e alocação de equipamentos.</p>
+        </li>
+        <li>
+          <div class="row">
+            <h3><a href="https://github.com/eltonmobarbosa/dt_petshop" target="_blank" rel="noopener noreferrer">DT Petshop <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+            <span class="tag">Web</span>
+          </div>
+          <p>Sistema web para gerenciar serviços de petshop, com interface responsiva.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiência</h2>
+      <ul class="list">
+        <li>
+          <div class="row">
+            <h3>Desenvolvedor Front-end React (Estágio) <span class="muted">· Ktech</span></h3>
+            <span class="date">Jan 2026 — Atual</span>
+          </div>
+          <p>Componentes reutilizáveis, integração com APIs e melhoria contínua da experiência do usuário.</p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>NOC <span class="muted">· Contax S.A.</span></h3>
+            <span class="date">Set 2025 — Atual</span>
+          </div>
+          <p>Monitoramento de sistemas, análise de incidentes e troubleshooting.</p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>Suporte Técnico <span class="muted">· Contax S.A.</span></h3>
+            <span class="date">Set 2024 — Set 2025</span>
+          </div>
+          <p>Atendimento a usuários, diagnóstico de problemas e apoio em infraestrutura.</p>
+        </li>
+      </ul>
+
+      <h2 class="sub">Formação</h2>
+      <ul class="list">
+        <li>
+          <div class="row">
+            <h3>Engenharia de Software <span class="muted">· Estácio</span></h3>
+            <span class="date">Previsão 2029</span>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <h3>WebAcademy <span class="muted">· UFAC</span></h3>
+            <span class="date">Jun 2025 — Mar 2026</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p class="lead">Disponível para oportunidades. Me chama por onde preferir.</p>
+      <div class="contacts">
+        <a href="mailto:elton.desenvolvimento@gmail.com"><i class="fa-solid fa-envelope"></i> elton.desenvolvimento@gmail.com</a>
+        <a href="https://wa.me/5568999365536" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/elton-barbosa-b39b62388/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+        <a href="https://github.com/eltonmobarbosa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
-    </aside>
+    </section>
+  </main>
 
-    <!-- CONTEÚDO -->
-    <main class="content">
-      <!-- HERO -->
-      <section id="inicio" class="section hero-section">
-        <div class="hero-grid">
-          <div class="hero-main panel">
-            <p class="eyebrow">Full Stack Web Developer</p>
-            <h2>
-              Construindo aplicações web com
-              <span>Java, React e foco em evolução constante.</span>
-            </h2>
-            <p class="hero-description">
-              Sou estudante de Engenharia de Software e atuo com desenvolvimento
-              web, APIs REST, bancos de dados SQL e interfaces modernas. Busco
-              oportunidades para crescer como desenvolvedor e contribuir
-              com soluções reais.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projetos" class="btn btn-primary">
-                <i class="fa-solid fa-arrow-right"></i>
-                Ver projetos
-              </a>
-              <a href="#contato" class="btn btn-secondary">
-                <i class="fa-brands fa-whatsapp"></i>
-                Falar comigo
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-side">
-            <div class="panel stat-panel">
-              <span class="stat-label">Foco principal</span>
-              <strong>Java + Spring Boot</strong>
-              <p>APIs REST, persistência com JPA e integração com MySQL.</p>
-            </div>
-
-            <div class="panel stat-panel">
-              <span class="stat-label">Front-end</span>
-              <strong>React + TypeScript</strong>
-              <p>Interfaces responsivas, componentização e experiência do usuário.</p>
-            </div>
-
-            <div class="panel stat-panel">
-              <span class="stat-label">Objetivo</span>
-              <strong>Desenvolver soluções</strong>
-              <p>Entrar em projetos onde eu possa gerar valor e evoluir tecnicamente.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SOBRE -->
-      <section id="sobre" class="section">
-        <div class="section-header">
-          <p class="section-kicker">SOBRE</p>
-          <h3>Quem sou eu</h3>
-        </div>
-
-        <div class="about-grid">
-          <div class="panel">
-            <p class="lead">
-              Me chamo Elton Moura Barbosa, tenho 21 anos e sou de Rio Branco, Acre.
-            </p>
-            <p>
-              Atualmente curso Engenharia de Software e venho construindo minha
-              trajetória com estudo contínuo, projetos práticos e capacitações na área
-              de desenvolvimento web.
-            </p>
-            <p>
-              Tenho foco especial no ecossistema Java, mas também gosto de trabalhar
-              com front-end moderno, principalmente com React, TypeScript e interfaces
-              bem estruturadas.
-            </p>
-          </div>
-
-          <div class="panel highlights-panel">
-            <div class="highlight-item">
-              <span class="highlight-number">01</span>
-              <div>
-                <strong>Perfil técnico</strong>
-                <p>Back-end com Java, Spring Boot, JPA, Hibernate e SQL.</p>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <span class="highlight-number">02</span>
-              <div>
-                <strong>Experiência prática</strong>
-                <p>Projetos acadêmicos, portfólio pessoal e atuação com suporte/NOC.</p>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <span class="highlight-number">03</span>
-              <div>
-                <strong>Forma de trabalho</strong>
-                <p>Gosto de código limpo, evolução constante e solução de problemas.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- STACK -->
-      <section id="stack" class="section">
-        <div class="section-header">
-          <p class="section-kicker">STACK</p>
-          <h3>Tecnologias e ferramentas</h3>
-        </div>
-
-        <div class="stack-grid">
-          <div class="panel tech-panel">
-            <h4>Back-end</h4>
-            <div class="tech-tags">
-              <span>Java</span>
-              <span>Spring Boot</span>
-              <span>Spring Data JPA</span>
-              <span>Hibernate</span>
-              <span>APIs REST</span>
-            </div>
-          </div>
-
-          <div class="panel tech-panel">
-            <h4>Front-end</h4>
-            <div class="tech-tags">
-              <span>React</span>
-              <span>Angular</span>
-              <span>TypeScript</span>
-              <span>JavaScript</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Tailwind</span>
-            </div>
-          </div>
-
-          <div class="panel tech-panel">
-            <h4>Banco de dados</h4>
-            <div class="tech-tags">
-              <span>MySQL</span>
-              <span>SQL</span>
-              <span>Modelagem de Dados</span>
-            </div>
-          </div>
-
-          <div class="panel tech-panel">
-            <h4>Ferramentas</h4>
-            <div class="tech-tags">
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>Docker</span>
-              <span>Maven</span>
-              <span>Postman</span>
-              <span>IntelliJ IDEA</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJETOS -->
-      <section id="projetos" class="section">
-        <div class="section-header">
-          <p class="section-kicker">PROJETOS</p>
-          <h3>O que venho construindo</h3>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project-card panel">
-            <div class="project-image-wrap">
-              <img src="img/dt_petshopimage.png" alt="Projeto DT Petshop" class="project-image" />
-            </div>
-            <div class="project-content">
-              <div class="project-top">
-                <span class="project-badge">Projeto Web</span>
-                <h4>DT Petshop</h4>
-              </div>
-              <p>
-                Sistema web para gerenciamento de serviços de petshop, com foco
-                em organização, usabilidade e interface responsiva.
-              </p>
-              <div class="tech-tags">
-                <span>React</span>
-                <span>CSS</span>
-                <span>Responsividade</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/eltonmobarbosa/dt_petshop" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-github"></i> Repositório
-                </a>
-              </div>
-            </div>
-          </article>
-
-<article class="project-card panel">
-            <div class="project-image-wrap">
-              <img src="img/scppimage.png" alt="Sistema de Controle de Projetos (PROPEG)" class="project-image" />
-            </div>
-            <div class="project-content">
-              <div class="project-top">
-                <span class="project-badge">Full-stack</span>
-                <h4>Sistema de Controle de Projetos (PROPEG)</h4>
-              </div>
-              <p>
-                Plataforma web para submissão, avaliação e gestão de projetos institucionais. Desenvolvida em equipe, possui sistema completo de permissões, notificações em tempo real via WebSockets e gerenciamento de rascunhos e anexos em nuvem.
-              </p>
-              <div class="tech-tags">
-                <span>Angular</span>
-                <span>Spring Boot</span>
-                <span>MySQL</span>
-                <span>Java</span>
-              </div>
-            </div>
-          </article>    
-
-<article class="project-card panel">
-            <div class="project-image-wrap">
-              <img src="img/trackeritimage.png" alt="Tracker IT - Gestão de Patrimônio" class="project-image" />
-            </div>
-            <div class="project-content">
-              <div class="project-top">
-                <span class="project-badge">Em desenvolvimento</span>
-                <h4>Tracker IT</h4>
-              </div>
-              <p>
-                Sistema completo para gestão e rastreamento de patrimônio de TI. A aplicação visa otimizar o controle de ativos corporativos, histórico de inventário e alocação de equipamentos, facilitando a administração e manutenção pelo time técnico.
-              </p>
-              <div class="tech-tags">
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>React</span>
-                <span>MySQL</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/eltonmobarbosa" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-github"></i> Em breve
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- EXPERIÊNCIA -->
-      <section id="experiencia" class="section">
-        <div class="section-header">
-          <p class="section-kicker">EXPERIÊNCIA</p>
-          <h3>Vivência profissional</h3>
-        </div>
-
-        <div class="timeline">
-
-          <article class="timeline-item panel">
-            <span class="timeline-date">Janeiro 2026 — Atual</span>
-            <h4>Desenvolvedor Front-end React (Estágio)</h4>
-            <p class="timeline-company">Ktech • Remoto</p>
-            <p>
-              Desenvolvimento e manutenção de interfaces web modernas utilizando React. Foco na criação de componentes reutilizáveis, integração com APIs e melhoria contínua da experiência do usuário.
-            </p>
-          </article>
-          <article class="timeline-item panel">
-            <span class="timeline-date">Set 2025 — Atual</span>
-            <h4>NOC (Network Operations Center)</h4>
-            <p class="timeline-company">Contax S.A. • Remoto</p>
-            <p>
-              Monitoramento de sistemas, análise de incidentes, troubleshooting e
-              suporte a ambientes de rede com foco em disponibilidade e estabilidade.
-            </p>
-          </article>
-
-          <article class="timeline-item panel">
-            <span class="timeline-date">Set 2024 — Set 2025</span>
-            <h4>Suporte Técnico</h4>
-            <p class="timeline-company">Contax S.A. • Presencial</p>
-            <p>
-              Atendimento a usuários, diagnóstico de problemas, manutenção de sistemas
-              e apoio técnico em infraestrutura e operação.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- FORMAÇÃO -->
-      <section id="formacao" class="section">
-        <div class="section-header">
-          <p class="section-kicker">FORMAÇÃO</p>
-          <h3>Base acadêmica e capacitação</h3>
-        </div>
-
-        <div class="formation-grid">
-          <div class="panel formation-card">
-            <span class="formation-label">Graduação</span>
-            <h4>Engenharia de Software</h4>
-            <p>Estácio</p>
-            <strong>Previsão de conclusão: 2029</strong>
-          </div>
-
-          <div class="panel formation-card">
-            <span class="formation-label">Formação complementar</span>
-            <h4>WebAcademy</h4>
-            <p>Universidade Federal do Acre (UFAC)</p>
-            <strong>Jun 2025 — Mar 2026</strong>
-          </div>
-
-          <div class="panel formation-card">
-            <span class="formation-label">Idiomas</span>
-            <h4>Português e Inglês</h4>
-            <p>Português nativo</p>
-            <strong>Inglês intermediário</strong>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTATO -->
-      <section id="contato" class="section">
-        <div class="section-header">
-          <p class="section-kicker">CONTATO</p>
-          <h3>Vamos conversar</h3>
-        </div>
-
-        <div class="contact-grid">
-          <div class="panel contact-info">
-            <h4>Disponível para oportunidades</h4>
-            <p>
-              Se você procura alguém comprometido, em evolução constante e com
-              vontade real de crescer em desenvolvimento de software, pode me chamar.
-            </p>
-
-            <div class="contact-list">
-              <a href="mailto:elton.desenvolvimento@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-                <span>elton.desenvolvimento@gmail.com</span>
-              </a>
-
-              <a href="https://github.com/eltonmobarbosa" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i>
-                <span>github.com/eltonmobarbosa</span>
-              </a>
-
-              <a href="https://www.linkedin.com/in/elton-barbosa-b39b62388/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>linkedin.com/in/elton-barbosa-b39b62388</span>
-              </a>
-            </div>
-          </div>
-
-          <form class="panel contact-form" id="formulario">
-            <div class="form-group">
-              <label for="nome">Seu nome</label>
-              <input type="text" id="nome" placeholder="Digite seu nome" required />
-            </div>
-
-            <div class="form-group">
-              <label for="mensagem">Mensagem</label>
-              <textarea
-                id="mensagem"
-                rows="6"
-                placeholder="Fale sobre a oportunidade ou projeto"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary full">
-              <i class="fa-brands fa-whatsapp"></i>
-              Enviar pelo WhatsApp
-            </button>
-          </form>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p>© 2026 Elton Barbosa.</p>
-      </footer>
-    </main>
-  </div>
+  <footer>© 2026 Elton Barbosa</footer>
 
   <script src="script.js"></script>
 </body>

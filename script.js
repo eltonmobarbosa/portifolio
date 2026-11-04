@@ -1,88 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebar = document.getElementById("sidebar");
-  const sidebarToggle = document.getElementById("sidebar-toggle");
-  const navLinks = document.querySelectorAll(".nav-link");
-  const sections = document.querySelectorAll("main section[id]");
-  const formulario = document.getElementById("formulario");
-
-  // Abre/fecha sidebar no mobile
-  if (sidebarToggle && sidebar) {
-    sidebarToggle.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
-    });
-  }
-
-  // Fecha o menu ao clicar em um link no mobile
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 900 && sidebar) {
-        sidebar.classList.remove("open");
-      }
-    });
-  });
-
-  // Destaca o link da seção atual conforme o scroll
-  const activateCurrentSection = () => {
-    let currentSectionId = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 140;
-      const sectionHeight = section.offsetHeight;
-
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + sectionHeight
-      ) {
-        currentSectionId = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      const href = link.getAttribute("href");
-
-      if (href === `#${currentSectionId}`) {
-        link.classList.add("active");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", activateCurrentSection);
-  activateCurrentSection();
-
-  // Se sair do mobile, garante que a sidebar volte ao estado normal
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 900 && sidebar) {
-      sidebar.classList.remove("open");
-    }
-  });
-
-  // Formulário de contato
-  if (formulario) {
-    formulario.addEventListener("submit", enviarMensagem);
-  }
+// Grade de fundo: segue o mouse (o CSS revela só um círculo em volta dele)
+addEventListener("pointermove", (e) => {
+  document.body.style.setProperty("--mx", e.clientX + "px");
+  document.body.style.setProperty("--my", e.clientY + "px");
 });
 
-function enviarMensagem(event) {
-  event.preventDefault();
+// Texto "decodificando": letras aleatórias que vão se resolvendo da esquerda pra direita
+const glyphs = "!<>-_\/[]{}=+*^?#01";
 
-  const nomeInput = document.getElementById("nome");
-  const mensagemInput = document.getElementById("mensagem");
+function scramble(el) {
+  const text = el.textContent;
+  el.setAttribute("aria-label", text); // leitores de tela leem o texto final
+  let frame = 0;
+  const tick = () => {
+    const done = frame / 3; // ~3 frames por letra
+    el.textContent = [...text]
+      .map((ch, i) => (ch === " " || i < done ? ch : glyphs[(Math.random() * glyphs.length) | 0]))
+      .join("");
+    if (done < text.length) { frame++; requestAnimationFrame(tick); }
+  };
+  tick();
+}
 
-  const nome = nomeInput ? nomeInput.value.trim() : "";
-  const mensagem = mensagemInput ? mensagemInput.value.trim() : "";
-  const telefone = "5568999365536";
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  scramble(document.querySelector("h1"));
 
-  if (!nome || !mensagem) {
-    alert("Por favor, preencha seu nome e a mensagem antes de enviar.");
-    return;
-  }
-
-  const texto = `Olá Elton! Me chamo ${nome}. ${mensagem}`;
-  const msgFormatada = encodeURIComponent(texto);
-
-  window.open(`https://wa.me/${telefone}?text=${msgFormatada}`, "_blank");
-
-  if (nomeInput) nomeInput.value = "";
-  if (mensagemInput) mensagemInput.value = "";
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { scramble(entry.target); io.unobserve(entry.target); }
+    });
+  }, { threshold: 1 });
+  document.querySelectorAll("h2").forEach((h) => io.observe(h));
 }
